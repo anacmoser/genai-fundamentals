@@ -44,7 +44,7 @@ rag =  GraphRAG(
 )
 
 # Search
-query_text = "Find me movies about toys coming alive" 
+query_text = "Find me movies about the march sisters" 
 
 response = rag.search(
     query_text=query_text,

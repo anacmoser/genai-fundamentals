@@ -16,9 +16,7 @@ driver = GraphDatabase.driver(
 )
 
 # Create embedder
-embedder = OpenAIEmbeddings(
-    model="text-embedding-3-small"
-)
+embedder = OpenAIEmbeddings(model="text-embedding-3-small")
 
 # Create retriever
 retriever = VectorRetriever(
@@ -29,14 +27,11 @@ retriever = VectorRetriever(
 )
 
 # Search for similar items
-result = retriever.search(
-    query_text = "Toys coming alive",
-    top_k = 5
-)
+result = retriever.search(query_text="Toys coming alive", top_k=5)
 
 # Parse results
 for item in result.items:
     print(item.content, item.metadata["score"])
 
-# CLose the database connection
+# Close the database connection
 driver.close()
